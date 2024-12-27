@@ -1,0 +1,402 @@
+:root {
+    --background: #101114;
+    --primary-color: #1C1D20;
+    --secondary-color: #4A4D57;
+    --accent-color: hsl(347, 89%, 56%);
+    --text-color: #F9F9F9;
+    --primary-color-hover: #2b2b2b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scrollbar-width: thin;
+    font-family: poppins;
+    font-size: 14pt;
+    font-weight: 350;
+    color: var(--text-color);
+    user-select: none;
+
+}
+
+body {
+    min-height: 100vh;
+    padding: 0px 10px;
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin-top: 100px;
+    margin-bottom: 20px;
+    font-size: 3rem;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+}
+
+/* h1::before{
+    content: url(quit-smoking.svg);
+    
+} */
+h1 svg {
+    height: 75px;
+    width: 75px;
+    position: absolute;
+    top: 3px;
+    left: -65px;
+    /* background-color: rgb(255, 255, 255); */
+}
+
+.wrapper {
+    width: 700px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#todo-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 25px;
+    background: none;
+    border: 2px solid var(--primary-color);
+    border-radius: 100px;
+    font-size: inherit;
+    outline: none;
+    color: var(--text-color);
+    caret-color: var(--accent-color);
+}
+
+form {
+    position: relative;
+}
+
+#add-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    padding: 0px 30px;
+    background-color: var(--accent-color);
+    color: var(--background);
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#add-button:hover {
+    opacity: 0.9;
+}
+
+.alert-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-size: cover; */
+}
+
+.alert-container .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.alert-container .alert-box {
+    height: 25vh;
+    width: 30vw;
+    /* background-color: var(--primary-color); */
+    background-color: w;
+    position: fixed;
+    border-radius: 30px;
+    gap: 50px;
+    top: 130px;
+    z-index: 1;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    opacity: 0.95;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.9);
+    transition: 300ms ease;
+    transform: scale(1);
+    backdrop-filter: blur(10px);
+}
+
+.alert-container.hide-show {
+    transform: scale(0);
+
+    .alert-box {
+        transform: scale(0);
+    }
+}
+
+.alert-container #button {
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    gap: 30px;
+}
+
+.alert-container .alert-box .ok-button {
+    background-color: transparent;
+    height: 35px;
+    width: 30%;
+    color: var(--text-color);
+    font-weight: bold;
+    border: 1px solid var(--accent-color);
+    border-radius: 15px;
+    /* margin-bottom: 20px; */
+    cursor: pointer;
+    transition: 600ms ease;
+}
+
+.alert-container .alert-box .ok-button:hover {
+    background-color: var(--accent-color);
+    color: black;
+}
+
+.alert-container .alert-box .no-button {
+    background-color: transparent;
+    height: 35px;
+    width: 30%;
+    color: var(--text-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 15px;
+    font-weight: bold;
+    /* margin-bottom: 20px; */
+    cursor: pointer;
+    transition: 600ms ease;
+    display: none;
+}
+
+.alert-container .alert-box .no-button:hover {
+    background-color: var(--accent-color);
+    color: black;
+}
+
+.alert-container #alert-text {
+    text-align: center;
+    margin-top: 12px;
+    font-size: .95rem;
+}
+
+.todo {
+    padding: 0px 19px;
+    margin-bottom: 10px;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    transition: 300ms ease;
+}
+
+.todo:hover {
+    background-color: var(--primary-color-hover);
+}
+
+.todo .todo-text {
+    padding: 15px;
+    padding-right: 0px;
+    flex-grow: 1;
+    transition: 300ms ease;
+}
+
+.todo-delete {
+    padding: 3px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.todo-delete svg {
+    transition: 200ms ease;
+}
+
+.todo-delete:hover svg {
+    fill: red;
+}
+
+.custom-checkbox {
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    min-height: 20px;
+    min-width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: 300ms ease;
+}
+
+input[type="checkbox"]:checked~.custom-checkbox {
+    background-color: var(--accent-color);
+
+}
+
+input[type="checkbox"]:checked~.custom-checkbox svg {
+    fill: var(--primary-color);
+
+}
+
+input[type="checkbox"]:checked~.todo-text {
+    text-decoration: line-through;
+    color: var(--secondary-color);
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.color-slider {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    padding: 0px 15px 0px 10px;
+    /* background-color: red; */
+    border: 2px solid var(--secondary-color);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    height: 30px;
+    width: 150px;
+    gap: 16px;
+    overflow: hidden;
+    transition: 300ms ease;
+}
+
+.color-slider.tweak {
+    width: 20px;
+}
+
+.color-slider svg:first-child {
+    visibility: hidden;
+    position: absolute;
+    transform: translateY(30px);
+    transition: 300ms ease;
+
+}
+
+.color-slider input[type="range"] {
+    appearance: none;
+    width: 100px;
+    height: 8px;
+    border-radius: 50px;
+    background-color: var(--secondary-color);
+    transition: 300ms ease;
+}
+
+.color-slider input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid white;
+    background-color: var(--accent-color);
+    box-shadow: 0 0 4px rgb(0, 0, 0);
+    transition: 300ms ease;
+}
+
+.color-slider.tweak input[type="range"] {
+    width: 0px;
+}
+
+.color-slider.tweak input[type="range"]::-webkit-slider-thumb {
+    transform: scale(0);
+}
+
+.color-slider svg:nth-child(2) {
+    cursor: pointer;
+    transform: translateY(0);
+    transition: transform 300ms ease;
+}
+
+.color-slider.tweak svg:nth-child(2) {
+    transform: translateY(-33px);
+}
+
+.color-slider.tweak svg:first-child {
+    transform: translateY(0px);
+    visibility: visible;
+    cursor: pointer;
+}
+
+
+
+
+
+
+@media(max-width:500px) {
+    html {
+        font-size: 12pt;
+    }
+
+    #add-button {
+        position: unset;
+        width: 100%;
+        padding: 15px;
+        margin-top: 10px;
+        font-weight: bold;
+        height: auto;
+    }
+
+    #add-button:active {
+        opacity: .9;
+    }
+
+    .todo-delete:hover svg {
+        fill: var(--secondary-color);
+    }
+
+    .todo-delete:active svg {
+        fill: red;
+    }
+
+    h1 {
+        font-size: 15vw;
+    }
+
+    h1 svg {
+        position: relative;
+        top: 14px;
+        left: 25px;
+
+
+    }
+
+    .alert-container .alert-box {
+        height: 24vh;
+        width: 50vw;
+    }
+
+    .alert-container .alert-box .ok-button {
+        height: 33px;
+        width: 35%;
+    }
+
+    .alert-container .alert-box .no-button {
+        height: 33px;
+        width: 35%;
+    }
+}

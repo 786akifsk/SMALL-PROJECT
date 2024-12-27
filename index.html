@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO APP</title> 
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dark-mode">
+    <div class="alert-container hide-show">
+        <div class="overlay "></div>
+        <div class="alert-box">
+            <div id="text">
+                <p id="alert-text"></p> 
+            </div>
+            <div id="button">
+                <button class="no-button">NO</button>
+                <button class="ok-button"></button>
+            </div>
+        </div>
+    </div>
+    <!-- <h1>TODO APP</h1> -->
+    <span></span>
+    <h1><svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="1024" height="1024" />
+            <path
+                d="M512 832.1C335.5 832.1 191.9 688.5 191.9 512C191.9 335.5 335.5 191.9 512 191.9C688.5 191.9 832.1 335.5 832.1 512C832.1 688.5 688.5 832.1 512 832.1ZM512 219.4C350.7 219.4 219.4 350.6 219.4 512C219.4 673.3 350.6 804.6 512 804.6C673.3 804.6 804.6 673.4 804.6 512C804.6 350.7 673.3 219.4 512 219.4Z"
+                fill="var(--accent-color)" />
+            <path
+                d="M690 584.7H334C309.4 584.7 289.3 564.6 289.3 540C289.3 515.4 309.4 495.3 334 495.3H690C714.6 495.3 734.7 515.4 734.7 540C734.7 564.6 714.6 584.7 690 584.7Z"
+                fill="white" />
+            <path
+                d="M690 593.9H334C304.3 593.9 280.1 569.7 280.1 540C280.1 510.3 304.3 486.1 334 486.1H690C719.7 486.1 743.9 510.3 743.9 540C743.9 569.7 719.7 593.9 690 593.9ZM334 504.4C314.4 504.4 298.5 520.3 298.5 539.9C298.5 559.5 314.4 575.4 334 575.4H690C709.6 575.4 725.5 559.5 725.5 539.9C725.5 520.3 709.6 504.4 690 504.4H334Z"
+                fill="#603813" />
+            <path d="M690 584.7H588.7V495.2H690C714.6 495.2 734.7 515.3 734.7 539.9C734.7 564.6 714.6 584.7 690 584.7Z"
+                fill="#F7AF5C" />
+            <path
+                d="M690 593.9H588.7C583.6 593.9 579.5 589.8 579.5 584.7V495.2C579.5 490.1 583.6 486 588.7 486H690C719.7 486 743.9 510.2 743.9 539.9C743.9 569.7 719.7 593.9 690 593.9ZM597.9 575.5H690C709.6 575.5 725.5 559.6 725.5 540C725.5 520.4 709.6 504.5 690 504.5H597.9V575.5Z"
+                fill="#603813" />
+            <path
+                d="M321.3 562C315.1 562 309.9 556.9 309.9 550.6V529.3C309.9 523.1 315 517.9 321.3 517.9C327.5 517.9 332.7 523 332.7 529.3V550.6C332.6 556.9 327.5 562 321.3 562Z"
+                fill="#E9440B" />
+            <path
+                d="M351.7 459.8C347.3 459.8 343.5 456.7 342.7 452.2C339.8 435.9 341 406.7 364.3 400.5C370.3 398.9 376 398.8 381.5 398.7C396.7 398.5 409.8 398.3 424.1 357.3C425.8 352.5 431 350 435.8 351.7C440.6 353.4 443.1 358.6 441.4 363.4C424.3 412.5 404.3 416.8 381.8 417.1C377.2 417.2 372.9 417.2 369.1 418.2C358.2 421.1 359.8 443.1 360.9 448.9C361.8 453.9 358.5 458.7 353.5 459.6C352.7 459.8 352.2 459.8 351.7 459.8Z"
+                fill="#603813" />
+            <path
+                d="M849.398 879C844.95 879 840.502 877.311 837.07 873.803L287.147 311.598C280.284 304.582 280.284 293.278 287.147 286.262C294.01 279.246 305.067 279.246 311.93 286.262L861.853 848.467C868.716 855.483 868.716 866.787 861.853 873.803C858.421 877.181 853.846 879 849.398 879Z"
+                fill="var(--accent-color)" />
+        </svg>
+        uit cigarette</h1>
+    <div class="color-slider tweak" id="color-slider">
+        <svg fill="var(--accent-color)" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+            width="24px" fill="#e8eaed">
+            <path
+                d="M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 32.5-156t88-127Q256-817 330-848.5T488-880q80 0 151 27.5t124.5 76q53.5 48.5 85 115T880-518q0 115-70 176.5T640-280h-74q-9 0-12.5 5t-3.5 11q0 12 15 34.5t15 51.5q0 50-27.5 74T480-80Zm0-400Zm-220 40q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm120-160q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm200 0q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm120 160q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17ZM480-160q9 0 14.5-5t5.5-13q0-14-15-33t-15-57q0-42 29-67t71-25h70q66 0 113-38.5T800-518q0-121-92.5-201.5T488-800q-136 0-232 93t-96 227q0 133 93.5 226.5T480-160Z" />
+        </svg>
+        <svg fill="var(--accent-color)" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+            width="24px" fill="#e8eaed">
+            <path
+                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+        </svg>
+        <input type="range" max="350" value="0" id="color" class="slider" oninput="Color()">
+    </div>
+    <div class="wrapper">
+        <form>
+            <input type="text" id="todo-input" placeholder="please write anything and hit enter to add" autocomplete="off">
+            <button id="add-button">ADD</button>
+        </form>
+        <ul id="todo-list">
+            <!-- <li class="todo">
+                <input type="checkbox" id="todo-1">
+                <label class="custom-checkbox" for="todo-1">
+                    <svg fill="transparent" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
+                </label>
+                <label for="todo-1" class="todo-text">
+                    Hi i am akif , what is your name?lorem10
+                </label>
+                <button class="todo-delete" >
+                    <svg fill="var(--secondary-color)" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>
+                </button>
+            </li>
+            <li class="todo">
+                <input type="checkbox" id="todo-2">
+                <label class="custom-checkbox" for="todo-2">
+                    <svg fill="transparent" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
+                </label>
+                <label for="todo-2" class="todo-text">
+                    Hi i am akif , what is your name?
+                </label>
+                <button class="todo-delete" >
+                    <svg fill="var(--secondary-color)" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>
+                </button>
+            </li> -->
+            <!-- https://pudgypenguins.com/pengu -->
+        </ul>
+    </div>
+</body>
+<script src="script.js" defer></script>
+
+</html>
